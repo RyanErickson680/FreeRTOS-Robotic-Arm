@@ -10,6 +10,7 @@
 #include <Wire.h>
 #include <AS5600.h>
 #include <queue.h>
+#include <IntervalTimer.h>
 
 #include "pins.h"
 #include "prototypes.h"
