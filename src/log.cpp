@@ -16,11 +16,11 @@ void TaskLogging(void *pvParameters)
             degrees -= 360;
         }
 
-        int baseAAngle = baseA.read();
-        int baseBAngle = baseB.read();
-        int middleAngle = middleS.read();
-        int wristAngle = wristS.read();
-        int clawAngle = clawS.read();
+        int baseAAngle = shoulderServoA.read();
+        int baseBAngle = shoulderServoB.read();
+        int middleAngle = wristServo.read();
+        int wristAngle = twistServo.read();
+        int clawAngle = clawServo.read();
 
         Serial.print("Encoder: ");
         Serial.print(degrees, 1);

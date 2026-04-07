@@ -1,7 +1,22 @@
 #ifndef LIMITS_H
 #define LIMITS_H
 
-#define MAX_ARM_ANGLE 327
-#define MIN_ARM_ANGLE 32
+#define MAX_BASE_ANGLE 360.0f
+#define MIN_BASE_ANGLE 0.0f
+
+#define MAX_SHOULDER_ANGLE 180.0f
+#define MIN_SHOULDER_ANGLE 0.0f
+
+#define MAX_ELBOW_ANGLE 327.0f
+#define MIN_ELBOW_ANGLE 32.0f
+
+#define MAX_WRIST_ANGLE 168.0f
+#define MIN_WRIST_ANGLE 0.0f
+
+#define MAX_TWIST_ANGLE 180.0f
+#define MIN_TWIST_ANGLE 0.0f
+
+#define MAX_CLAW_ANGLE 160.0f
+#define MIN_CLAW_ANGLE 26.0f
 
 #endif // LIMITS_H

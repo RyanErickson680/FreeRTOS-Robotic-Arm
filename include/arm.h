@@ -14,13 +14,10 @@
 
 #include "pins.h"
 #include "prototypes.h"
+#include "limits.h"
+#include "kinematics.h"
 
-struct PoseCommand {
-  float x, y, z, roll, pitch, yaw;
-};
 
-struct JointAngles {
-  float base, arm, middle, wrist, twist, claw;
-};
+
 
 #endif // ARM_H

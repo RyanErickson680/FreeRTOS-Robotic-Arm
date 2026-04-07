@@ -17,11 +17,11 @@ int baseDirection = LOW;
 int armDirection = LOW;
 
 // Servos
-Servo baseA;
-Servo baseB;
-Servo middleS;
-Servo wristS;
-Servo clawS;
+Servo shoulderServoA;
+Servo shoulderServoB;
+Servo wristServo;
+Servo twistServo;
+Servo clawServo;
 
 // AS5600 mag encoder
 AS5600 encoder;
@@ -79,19 +79,19 @@ void setup()
     digitalWrite(ARM_EN_PIN, LOW);
 
     // Attach servos
-    baseA.attach(BASE_SERVO_A);
-    baseB.attach(BASE_SERVO_B);
-    middleS.attach(MIDDLE_SERVO);
-    wristS.attach(WRIST_SERVO);
-    clawS.attach(CLAW_SERVO);
+    shoulderServoA.attach(BASE_SERVO_A);
+    shoulderServoB.attach(BASE_SERVO_B);
+    wristServo.attach(MIDDLE_SERVO);
+    twistServo.attach(WRIST_SERVO);
+    clawServo.attach(CLAW_SERVO);
 
     int ang = 90;
 
-    baseA.write(ang + 4);
-    baseB.write((180 - ang) + 4);  // mirrored    
-    wristS.write(ang);
-    middleS.write(ang);
-    clawS.write(ang);
+    // shoulderServoA.write(ang + 4);
+    // shoulderServoB.write((180 - ang) + 4);  // mirrored    
+    // twistServo.write(ang);
+    // wristServo.write(ang);
+    // clawServo.write(ang);
 
     delay(1000);
 
@@ -113,7 +113,7 @@ void setup()
         NULL);
     
     xTaskCreate(
-        TaskMotionControl,
+        TaskMotionSupervisor,
         "MotionCtrl",
         8192, // Stack size
         NULL,
